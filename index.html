@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>White and Green - Pulizie e Giardinaggio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="progress-container">
+      <div class="reading-progress-bar" id="reading-progress-bar"></div>
+    </div>
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-flower1 me-2"></i>
+        White and Green
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Chi Siamo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galleria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Recensioni</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="vh-100 d-flex align-items-center justify-content-center text-white hero-bg">
+    <div class="text-center hero-content" data-aos="fade-up">
+      <h1 class="display-4 fw-bold">White and Green</h1>
+      <p class="lead">Pulizie e Giardinaggio Professionali per la Tua Casa e Azienda</p>
+      <div class="mt-4">
+        <a href="#services" class="btn btn-light btn-lg me-2"><i class="bi bi-broom me-2"></i>Servizi di Pulizia</a>
+        <a href="#services" class="btn btn-outline-light btn-lg"><i class="bi bi-tree me-2"></i>Giardinaggio</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Casa pulita" class="img-fluid rounded shadow-lg">
+        </div>
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+          <h2 class="section-title">Chi Siamo</h2>
+          <p class="lead fw-bold text-primary mb-4">La tua fiducia è la nostra priorità</p>
+          <p>White and Green nasce dalla passione per gli ambienti puliti e gli spazi verdi curati. Da oltre 10 anni offriamo servizi professionali di pulizia e giardinaggio, combinando tecniche moderne con un'attenzione particolare al rispetto dell'ambiente.</p>
+          <p>Il nostro team di esperti è formato, certificato e dedicato a fornire risultati eccellenti per ogni cliente.</p>
+          <div class="d-flex mt-4">
+            <div class="me-4">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-check-circle-fill fs-5 text-primary me-2"></i>
+                <span class="fw-bold">100% Soddisfazione</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill fs-5 text-primary me-2"></i>
+                <span class="fw-bold">Prodotti Ecologici</span>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-check-circle-fill fs-5 text-primary me-2"></i>
+                <span class="fw-bold">Personale Qualificato</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill fs-5 text-primary me-2"></i>
+                <span class="fw-bold">Preventivi Gratuiti</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center mb-2" data-aos="fade-up">I nostri Servizi</h2>
+      <p class="text-center mb-5" data-aos="fade-up">Soluzioni complete per la casa e l'azienda</p>
+      
+      <!-- Service Tabs Navigation -->
+      <ul class="nav nav-pills mb-4 justify-content-center service-tabs" id="servicesTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pulizie-tab" data-bs-toggle="pill" data-bs-target="#pulizie" type="button" role="tab" aria-selected="true">Pulizie</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="giardinaggio-tab" data-bs-toggle="pill" data-bs-target="#giardinaggio" type="button" role="tab" aria-selected="false">Giardinaggio</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="speciali-tab" data-bs-toggle="pill" data-bs-target="#speciali" type="button" role="tab" aria-selected="false">Servizi Speciali</button>
+        </li>
+      </ul>
+      
+      <!-- Tab Content -->
+      <div class="tab-content" id="servicesTabContent">
+        <!-- Pulizie Tab -->
+        <div class="tab-pane fade show active" id="pulizie" role="tabpanel" aria-labelledby="pulizie-tab">
+          <div class="row g-4">
+            <!-- Domestic Cleaning -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-house-check"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Pulizie Domestiche</h5>
+                  </div>
+                  <p class="card-text">Servizi di pulizia regolari o una tantum per mantenere la tua casa splendente.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia completa di bagni e cucine</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Aspirazione e lavaggio pavimenti</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Spolveratura di mobili e superfici</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Sanificazione con prodotti eco-compatibili</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>A partire da €15/ora</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Commercial Cleaning -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-building"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Pulizie Commerciali</h5>
+                  </div>
+                  <p class="card-text">Servizi professionali per uffici, negozi e strutture commerciali.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia di uffici e aree comuni</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Sanificazione di bagni e cucine</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia di vetri e superfici</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Programmi personalizzati e flessibili</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Contratti personalizzati</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Window Cleaning -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-window"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Pulizia Vetri</h5>
+                  </div>
+                  <p class="card-text">Pulizia professionale di vetri e finestre, anche ad altezze elevate.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia interna ed esterna</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Personale specializzato e certificato</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Attrezzature professionali</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Risultati privi di aloni e striature</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Prezzi in base alla metratura</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Giardinaggio Tab -->
+        <div class="tab-pane fade" id="giardinaggio" role="tabpanel" aria-labelledby="giardinaggio-tab">
+          <div class="row g-4">
+            <!-- Garden Maintenance -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-tree"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Manutenzione Giardini</h5>
+                  </div>
+                  <p class="card-text">Manutenzione completa di giardini, taglio erba e potatura di piante e arbusti.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Taglio dell'erba regolare</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Potatura di arbusti e siepi</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Controllo infestanti</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Concimazione stagionale</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>A partire da €20/ora</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Irrigation Systems -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-droplet"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Sistemi di Irrigazione</h5>
+                  </div>
+                  <p class="card-text">Installazione e manutenzione di sistemi di irrigazione automatici per giardini.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Progettazione del sistema</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Installazione di impianti a zone</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Programmazione e controllo</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Manutenzione e riparazioni</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Preventivi personalizzati</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Garden Design -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-flower1"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Progettazione Giardini</h5>
+                  </div>
+                  <p class="card-text">Progettazione e realizzazione di spazi verdi, aiuole e giardini personalizzati.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Consulenza e progettazione</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Selezione di piante e materiali</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Realizzazione completa</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Piano di manutenzione</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Progetti su misura</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Servizi Speciali Tab -->
+        <div class="tab-pane fade" id="speciali" role="tabpanel" aria-labelledby="speciali-tab">
+          <div class="row g-4">
+            <!-- Special Cleaning -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-stars"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Pulizie Post-Ristrutturazione</h5>
+                  </div>
+                  <p class="card-text">Pulizie di fondo dopo lavori di ristrutturazione o costruzione.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Rimozione residui di lavorazione</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia di pavimenti e superfici</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizia di serramenti e vetri</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Igienizzazione completa</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Interventi su misura</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Sanitation -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Sanificazione Ambienti</h5>
+                  </div>
+                  <p class="card-text">Servizio professionale di sanificazione e disinfezione degli ambienti.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Disinfezione di ambienti e superfici</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Trattamento con prodotti certificati</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Sanificazione dell'aria</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Certificazione del servizio</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Protocolli personalizzati</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Seasonal Services -->
+            <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="card service-card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="service-icon-container me-3">
+                      <i class="bi bi-calendar4-event"></i>
+                    </div>
+                    <h5 class="card-title mb-0">Servizi Stagionali</h5>
+                  </div>
+                  <p class="card-text">Interventi specializzati in base alla stagione per interni ed esterni.</p>
+                  <div class="service-details mt-3">
+                    <h6 class="text-primary">Il servizio include:</h6>
+                    <ul class="service-list">
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Preparazione giardini invernali/estivi</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Pulizie di primavera approfondite</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Manutenzione pre-eventi</li>
+                      <li><i class="bi bi-check-circle text-primary me-2"></i>Decorazioni e cura spazi esterni</li>
+                    </ul>
+                  </div>
+                  <a href="#contact" class="btn btn-outline-primary mt-3 w-100">Richiedi Preventivo</a>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center text-muted">
+                  <small>Disponibile tutto l'anno</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5" data-aos="fade-up">I Nostri Lavori</h2>
+      <div class="row g-3">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="gallery-item" 
+               data-img="https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+               data-title="Pulizia Domestica"
+               data-description="Servizio di pulizia completo per la tua casa, includendo pavimenti, cucina, bagni e aree comuni. Utilizziamo prodotti ecologici e tecniche efficaci per rimuovere lo sporco e i batteri.">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Pulizia domestica" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Pulizia Domestica</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="gallery-item"
+               data-img="https://images.unsplash.com/photo-1558904541-eba1c56536f0"
+               data-title="Giardinaggio"
+               data-description="Manutenzione completa del giardino, dal taglio dell'erba alla potatura di piante e arbusti. Creiamo e manteniamo spazi verdi rigogliosi e salutari per valorizzare la tua proprietà.">
+            <img src="https://images.unsplash.com/photo-1558904541-eba1c56536f0" alt="Giardinaggio" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Giardinaggio</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="gallery-item"
+               data-img="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac"
+               data-title="Pulizia Uffici"
+               data-description="Servizi professionali di pulizia per spazi commerciali e uffici. Manteniamo i tuoi spazi di lavoro puliti, igienizzati e accoglienti per dipendenti e clienti, con piani personalizzati in base alle tue esigenze.">
+            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac" alt="Pulizia uffici" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Pulizia Uffici</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="gallery-item"
+               data-img="https://images.unsplash.com/photo-1527515545081-5db817172677"
+               data-title="Pulizia Vetri"
+               data-description="Servizio specializzato nella pulizia di vetrate, finestre e superfici vetrate. Utilizziamo attrezzature professionali e tecniche specifiche per risultati impeccabili, anche per edifici a più piani.">
+            <img src="https://images.unsplash.com/photo-1527515545081-5db817172677" alt="Pulizia vetri" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Pulizia Vetri</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="gallery-item"
+               data-img="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae"
+               data-title="Sistemazione Giardino"
+               data-description="Progettazione e realizzazione di spazi verdi, aiuole e giardini. Trasformiamo qualsiasi area esterna in un ambiente accogliente e funzionale, con soluzioni personalizzate e piante selezionate.">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae" alt="Sistemazione giardino" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Sistemazione Giardino</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="gallery-item"
+               data-img="https://images.unsplash.com/photo-1584622650111-993a426ibf0a"
+               data-title="Sanificazione"
+               data-description="Servizio professionale di sanificazione e disinfezione degli ambienti. Eliminiamo batteri, virus e allergeni utilizzando prodotti certificati e attrezzature specifiche per garantire spazi sicuri e salubri.">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426ibf0a" alt="Sanificazione" class="img-fluid rounded">
+            <div class="gallery-overlay">
+              <h5>Sanificazione</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Modal -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="galleryModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <img src="" alt="" class="img-fluid rounded gallery-modal-img">
+              </div>
+              <div class="col-12 p-4">
+                <h4 class="gallery-modal-title mb-3"></h4>
+                <p class="gallery-modal-description"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-success gallery-contact-btn" data-bs-dismiss="modal">Richiedi Preventivo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center mb-5" data-aos="fade-up">Cosa Dicono i Nostri Clienti</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"Servizio impeccabile! Ho affidato a loro la pulizia della mia casa e del giardino, e sono rimasta piacevolmente sorpresa dalla cura e dall'attenzione ai dettagli."</p>
+            <div class="testimonial-author">
+              <h5>Laura Bianchi</h5>
+              <p class="text-muted">Cliente privato</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"La nostra azienda utilizza White and Green da oltre due anni per la pulizia degli uffici e la manutenzione degli spazi verdi. Personale professionale e puntuale."</p>
+            <div class="testimonial-author">
+              <h5>Marco Rossi</h5>
+              <p class="text-muted">Direttore aziendale</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div class="rating mb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <p class="testimonial-text">"Ho richiesto un intervento di pulizia post-ristrutturazione. Lavoro eccellente, veloce e a un prezzo competitivo. Tornerò sicuramente a contattarli."</p>
+            <div class="testimonial-author">
+              <h5>Giulia Verdi</h5>
+              <p class="text-muted">Cliente privato</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="section-title mb-4">Contattaci</h2>
+          <p class="lead mb-4">Siamo qui per rispondere a tutte le tue domande e offrirti un preventivo gratuito.</p>
+          
+          <div class="contact-info">
+            <div class="d-flex mb-3">
+              <div class="contact-icon-container me-3">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h5 class="m-0">Indirizzo</h5>
+                <p class="m-0">Via Example 123, 00100 Roma</p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <div class="contact-icon-container me-3">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <h5 class="m-0">Telefono</h5>
+                <p class="m-0">+39 06 1234567</p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <div class="contact-icon-container me-3">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h5 class="m-0">Email</h5>
+                <p class="m-0">info@whiteandgreen.it</p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <div class="contact-icon-container me-3">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div>
+                <h5 class="m-0">Orari</h5>
+                <p class="m-0">Lun-Ven: 8:00-18:00 | Sab: 9:00-13:00</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links mt-4">
+            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
+          <div class="contact-form-container">
+            <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome e Cognome</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="_replyto" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Telefono</label>
+                <input type="tel" class="form-control" id="phone" name="phone">
+              </div>
+              <div class="mb-3">
+                <label for="service" class="form-label">Servizio richiesto</label>
+                <select class="form-select" id="service" name="service">
+                  <option value="">Seleziona un servizio</option>
+                  <option value="pulizie-domestiche">Pulizie domestiche</option>
+                  <option value="pulizie-commerciali">Pulizie commerciali</option>
+                  <option value="giardinaggio">Giardinaggio</option>
+                  <option value="pulizia-vetri">Pulizia vetri</option>
+                  <option value="irrigazione">Sistemi di irrigazione</option>
+                  <option value="pulizie-speciali">Pulizie speciali</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Messaggio</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Richiedi Preventivo Gratuito</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center text-md-start">
+          <div class="footer-logo">
+            <i class="bi bi-flower1 me-2"></i>
+            White and Green
+          </div>
+          <p class="mb-0">Pulizie e Giardinaggio Professionali</p>
+        </div>
+        <div class="col-md-4 text-center py-3 py-md-0">
+          <p class="mb-0">&copy; 2025 White and Green. Tutti i diritti riservati.</p>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <a href="#" class="text-dark me-3">Privacy Policy</a>
+          <a href="#" class="text-dark">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="./assets/scripts.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
