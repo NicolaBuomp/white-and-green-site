@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Servizi professionali di pulizia e giardinaggio per case e aziende. Preventivi gratuiti e servizio di qualità.">
+  <meta name="theme-color" content="#45815B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>White and Green - Pulizie e Giardinaggio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +30,7 @@
         <i class="bi bi-flower1 me-2"></i>
         White and Green
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,8 +52,8 @@
     <div class="text-center hero-content" data-aos="fade-up">
       <h1 class="display-4 fw-bold">White and Green</h1>
       <p class="lead">Pulizie e Giardinaggio Professionali per la Tua Casa e Azienda</p>
-      <div class="mt-4">
-        <a href="#services" class="btn btn-light btn-lg me-2"><i class="bi bi-broom me-2"></i>Servizi di Pulizia</a>
+      <div class="mt-4 hero-buttons">
+        <a href="#services" class="btn btn-light btn-lg me-2 mb-2 mb-md-0"><i class="bi bi-broom me-2"></i>Servizi di Pulizia</a>
         <a href="#services" class="btn btn-outline-light btn-lg"><i class="bi bi-tree me-2"></i>Giardinaggio</a>
       </div>
     </div>
@@ -62,7 +66,7 @@
         <div class="col-lg-6" data-aos="fade-right">
           <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Casa pulita" class="img-fluid rounded shadow-lg">
         </div>
-        <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+        <div class="col-lg-6 ps-lg-5 mt-4" data-aos="fade-left">
           <h2 class="section-title">Chi Siamo</h2>
           <p class="lead fw-bold text-primary mb-4">La tua fiducia è la nostra priorità</p>
           <p>White and Green nasce dalla passione per gli ambienti puliti e gli spazi verdi curati. Da oltre 10 anni offriamo servizi professionali di pulizia e giardinaggio, combinando tecniche moderne con un'attenzione particolare al rispetto dell'ambiente.</p>
@@ -570,7 +574,7 @@
               </div>
               <div>
                 <h5 class="m-0">Telefono</h5>
-                <p class="m-0">+39 06 1234567</p>
+                <p class="m-0"><a href="tel:+390612345672" class="contact-link">+39 06 1234567</a></p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -579,7 +583,7 @@
               </div>
               <div>
                 <h5 class="m-0">Email</h5>
-                <p class="m-0">info@whiteandgreen.it</p>
+                <p class="m-0"><a href="mailto:info@whiteandgreen.it" class="contact-link">info@whiteandgreen.it</a></p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -594,16 +598,26 @@
           </div>
           
           <div class="social-links mt-4">
-            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+          
+          <!-- Mobile Call-to-Action -->
+          <div class="d-md-none mt-4 mobile-cta">
+            <a href="tel:+390612345672" class="btn btn-success btn-lg w-100 mb-2">
+              <i class="bi bi-telephone-fill me-2"></i>Chiama Ora
+            </a>
+            <a href="mailto:info@whiteandgreen.it" class="btn btn-primary btn-lg w-100">
+              <i class="bi bi-envelope-fill me-2"></i>Invia Email
+            </a>
           </div>
         </div>
         
         <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
           <div class="contact-form-container">
-            <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+            <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form" autocomplete="on">
               <div class="mb-3">
                 <label for="name" class="form-label">Nome e Cognome</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -614,7 +628,7 @@
               </div>
               <div class="mb-3">
                 <label for="phone" class="form-label">Telefono</label>
-                <input type="tel" class="form-control" id="phone" name="phone">
+                <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel">
               </div>
               <div class="mb-3">
                 <label for="service" class="form-label">Servizio richiesto</label>
@@ -639,6 +653,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" class="back-to-top" aria-label="Torna all'inizio"><i class="bi bi-arrow-up"></i></a>
 
   <!-- Footer -->
   <footer class="footer py-4">

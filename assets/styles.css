@@ -40,21 +40,6 @@ a:hover {
   color: var(--primary-green);
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 60px;
-  height: 3px;
-  background-color: var(--primary-green);
-}
-
-.text-center .section-title::after {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* Navbar override */
 .navbar {
   background-color: var(--primary-white) !important;
@@ -258,11 +243,29 @@ a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
 }
 
 .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+  padding: 20px 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay,
+.gallery-item:active .gallery-overlay {
+  opacity: 1;
 }
 
 /* Gallery Modal Styles */
@@ -519,6 +522,82 @@ html {
   width: 0;
 }
 
+/* Mobile Optimizations */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary-green);
+}
+
+/* Mobile CTA Section */
+.mobile-cta {
+  margin: 2rem 0;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-3px);
+  color: white;
+}
+
+/* Enhanced Navbar Mobile */
+.navbar-toggler {
+  border: none;
+  padding: 0.4rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: 2px solid var(--primary-green);
+}
+
+/* Fix for social links */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Improved Service Cards for Mobile */
+.service-icon-container {
+  flex-shrink: 0;
+}
+
 /* Media Queries */
 @media (max-width: 991.98px) {
   .hero-content h1 {
@@ -527,6 +606,18 @@ html {
   
   .navbar .nav-link::after {
     display: none;
+  }
+  
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .service-tabs .nav-link {
+    margin-bottom: 5px;
   }
 }
 
@@ -546,5 +637,74 @@ html {
   .contact-form-container,
   .testimonial-card {
     margin-bottom: 30px;
+  }
+  
+  #about {
+    padding: 60px 0;
+  }
+  
+  #services, #gallery, #testimonials, #contact {
+    padding: 50px 0;
+  }
+  
+  .service-card {
+    margin-bottom: 15px;
+  }
+  
+  .service-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .service-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-icon-container i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+  
+  .gallery-item {
+    margin-bottom: 15px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .contact-icon-container {
+    width: 35px;
+    height: 35px;
   }
 }

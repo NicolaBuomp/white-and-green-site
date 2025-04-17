@@ -2,21 +2,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
 
-    window.addEventListener('scroll', function () {
+    // Performance optimization for scroll events
+    function throttle(callback, limit) {
+        let waiting = false;
+        return function() {
+            if (!waiting) {
+                callback.apply(this, arguments);
+                waiting = true;
+                setTimeout(function() {
+                    waiting = false;
+                }, limit);
+            }
+        };
+    }
+
+    const handleScroll = throttle(function() {
+        // Navbar scrolled effect
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
 
-    // Active link highlight
-    const sections = document.querySelectorAll('section, header');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', function () {
+        // Active link highlight
         let current = '';
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
@@ -32,7 +41,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.classList.add('active');
             }
         });
-    });
+
+        // Reading progress bar updates
+        if (progressBar) {
+            const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (windowScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        // Back to top button functionality
+        if (backToTopButton) {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        }
+    }, 100); // 100ms throttle
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Active link highlight
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     // Collapse navbar on link click (mobile)
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -130,13 +162,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const progressBar = document.getElementById('reading-progress-bar');
-    if (progressBar) {
-        window.addEventListener('scroll', function () {
-            const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (windowScroll / height) * 100;
+    const backToTopButton = document.getElementById('back-to-top');
 
-            progressBar.style.width = scrolled + '%';
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollTo(0, 800);
         });
     }
 
@@ -192,4 +223,59 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+
+    // Optimize animations for mobile
+    const isMobile = window.innerWidth < 768;
+    
+    // If on mobile, reduce animation duration for better performance
+    if (isMobile) {
+        // Adjust AOS settings for mobile
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 600, // Shorter duration on mobile
+                once: true,
+                offset: 50 // Smaller offset for earlier animation trigger
+            });
+        }
+    }
+    
+    // Better mobile touch handling for gallery items
+    if (isMobile) {
+        galleryItems.forEach(item => {
+            // Add/Remove touch feedback class
+            item.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            }, { passive: true });
+            
+            item.addEventListener('touchend', function() {
+                this.classList.remove('touch-active');
+            }, { passive: true });
+        });
+    }
+    
+    // Improved mobile navigation
+    if (isMobile) {
+        // Fix iOS touch delay on navbar toggle
+        if (navbarToggler) {
+            navbarToggler.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.click();
+            }, { passive: false });
+        }
+    }
+    
+    // Fix for mobile 100vh issue (address iOS Safari viewport height bug)
+    function adjustMobileVH() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // Adjust hero section height
+        const heroSection = document.getElementById('hero');
+        if (heroSection) {
+            heroSection.style.height = `calc(var(--vh, 1vh) * 100)`;
+        }
+    }
+    
+    adjustMobileVH();
+    window.addEventListener('resize', adjustMobileVH);
 });
